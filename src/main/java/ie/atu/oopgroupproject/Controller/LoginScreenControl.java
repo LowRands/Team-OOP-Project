@@ -2,14 +2,14 @@ package ie.atu.oopgroupproject.Controller;
 
 import ie.atu.oopgroupproject.Constructors.Username;
 import ie.atu.oopgroupproject.Service.LoginService;
-import io.swagger.v3.oas.annotations.Hidden;
-import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 
@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 public class LoginScreenControl {
     public static void main(String[] args) {
-
     }
 
     ArrayList<Username> nameList = new ArrayList<>();
@@ -30,22 +29,17 @@ public class LoginScreenControl {
     }
 
     @GetMapping("/Login")
-    @Schema(format = "Password", hidden = true)
-    //@Hidden
     public ResponseEntity<String> Username(@RequestParam String Username, String Email, String Password) {
         String user = Login.Username(Username, Email, Password);
-        nameList.add(new Username());
-
+        String fileName = "Users";
+        try(PrintWriter out = new PrintWriter(new FileWriter(fileName, true))) {
+            out.println("Username: " + Username);
+            out.println("Email: " + Email);
+            out.println("Password: " + Password);
+        }catch (IOException ex){
+            System.out.println(ex.getMessage());
+        }
         return ResponseEntity.ok("Login Successful");
-
-//        boolean containsEmail = false; // setting contains email to false to start
-//        for (Username username : nameList) {
-//            if (username.getEmail().equals(email)) {
-//                containsEmail = true;
-//                break;
-//
-//            }
-//        }
     }
 }
 
