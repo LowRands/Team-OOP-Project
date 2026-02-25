@@ -5,9 +5,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LoginService {
-    public String Username(String username) {
+    public String Username(String username, String email, String password) {
             return  username;
     }
     public String Password;
+    public String Email;
 
 }
