@@ -13,7 +13,7 @@ public class CreateProfileService {
 
     public Profile createProfile(Profile profile) {
         if(profile.getMedClearance() && !profile.getMedClearance()) {
-            throw new RuntimeException("Can't be an active swimmer without medical clearance")
+            throw new RuntimeException("Can't be an active swimmer without medical clearance");
         }
 
         profiles.add(profile);
