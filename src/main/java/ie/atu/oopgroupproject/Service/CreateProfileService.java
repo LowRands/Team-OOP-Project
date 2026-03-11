@@ -32,5 +32,12 @@ public class CreateProfileService {
         }
         throw new RuntimeException("Profile with id " + id + " not found");
     }
+    public void deleteProfileById(String id) {
+        for(Profile profile : profiles) {
+            if(profile.getSwimmerId() == Integer.parseInt(id)) {
+                profiles.remove(profile);
+            }
+        }
+    }
 }
 
