@@ -1,4 +1,4 @@
-package ie.atu.oopgroupproject;
+package ie.atu.oopgroupproject.model;
 
 public class Profile {
     public String name;
