@@ -14,6 +14,8 @@ public class LoginScreenControl {
     @GetMapping("/Validate")
     public Map<String, String> Validate(@RequestParam String Username, @RequestParam String Email, @RequestParam String Password) {
         Map<String, String> response = new HashMap<>();
+
+        List<List<String>> Logins = new ArrayList<>();
         List<String> Usernames = new ArrayList<>();
         List<String> Passwords = new ArrayList<>();
         List<String> Emails = new ArrayList<>();
@@ -38,6 +40,12 @@ public class LoginScreenControl {
             if (Passwords.contains(Password)) {
                 response.put("Password:", "Valid Password");
             }
+        }
+        Logins.add(Usernames);
+        Logins.add(Emails);
+        Logins.add(Passwords);
+        if(Logins.contains(Usernames) && Logins.contains(Emails) && Logins.contains(Passwords)) {
+            System.out.println("Login Success");
         }
         return response;
     }
