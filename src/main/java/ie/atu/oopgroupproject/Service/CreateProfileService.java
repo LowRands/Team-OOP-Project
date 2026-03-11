@@ -24,5 +24,13 @@ public class CreateProfileService {
         return profiles;
     }
 
+    public Profile getProfileById(String id) {
+        for(Profile profile : profiles) {
+            if(profile.getSwimmerId() == Integer.parseInt(id)) {
+                return profile;
+            }
+        }
+        throw new RuntimeException("Profile with id " + id + " not found");
+    }
 }
 
