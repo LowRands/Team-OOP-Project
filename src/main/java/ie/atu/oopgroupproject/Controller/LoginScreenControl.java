@@ -15,7 +15,7 @@ public class LoginScreenControl {
     public Map<String, String> Validate(@RequestParam String Username, @RequestParam String Email, @RequestParam String Password) {
         Map<String, String> response = new HashMap<>();
 
-        List<List<String>> Logins = new ArrayList<>();
+
         List<String> Usernames = new ArrayList<>();
         List<String> Passwords = new ArrayList<>();
         List<String> Emails = new ArrayList<>();
