@@ -29,6 +29,7 @@ public class LoginScreenControl {
                 response.put("Status:", "Login Failed. Incorrect Username, Email or Password");
             }
         }
-        return response;
+            return response;
+        }
     }
-}
+
