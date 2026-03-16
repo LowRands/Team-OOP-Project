@@ -10,6 +10,8 @@ public class Profile {
     public boolean medClearance;
     public boolean memberStatus;
 
+    public Profile(){}
+
     public Profile(String name, int SwimmerId, String DOB, boolean medClearance, boolean memberStatus){
         this.name = name;
         this.swimmerId = SwimmerId;
