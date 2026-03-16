@@ -12,7 +12,7 @@ public class CreateProfileService {
     private List<Profile> profiles = new ArrayList<Profile>();
 
     public Profile createProfile(Profile profile) {
-        if(profile.getMedClearance() && !profile.getMedClearance()) {
+        if(profile.getMemberStatus() && !profile.getMedClearance()) {
             throw new RuntimeException("Can't be an active swimmer without medical clearance");
         }
 
