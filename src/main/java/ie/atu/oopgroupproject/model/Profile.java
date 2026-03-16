@@ -1,27 +1,29 @@
 package ie.atu.oopgroupproject.model;
 
+
+
 public class Profile {
+
     public String name;
-    public int SwimmerId;
+    public int swimmerId;
     public String DOB;
     public boolean medClearance;
     public boolean memberStatus;
 
     public Profile(String name, int SwimmerId, String DOB, boolean medClearance, boolean memberStatus){
         this.name = name;
-        this.SwimmerId = SwimmerId;
+        this.swimmerId = SwimmerId;
         this.DOB = DOB;
         this.medClearance = medClearance;
         this.memberStatus = memberStatus;
     }
-
-    public String getName() {
+    public String getName(){
         return name;
     }
-    public int getSwimmerId() {
-        return SwimmerId;
+    public int getSwimmerId(){
+        return swimmerId;
     }
-    public String getDOB() {
+    public String getDOB(){
         return DOB;
     }
     public boolean getMedClearance() {
@@ -32,4 +34,3 @@ public class Profile {
     }
 
 }
-//
