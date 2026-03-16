@@ -6,7 +6,7 @@ public class Profile {
 
     public String name;
     public int swimmerId;
-    public String DOB;
+    public String dob;
     public boolean medClearance;
     public boolean memberStatus;
 
@@ -15,7 +15,7 @@ public class Profile {
     public Profile(String name, int SwimmerId, String DOB, boolean medClearance, boolean memberStatus){
         this.name = name;
         this.swimmerId = SwimmerId;
-        this.DOB = DOB;
+        this.dob = DOB;
         this.medClearance = medClearance;
         this.memberStatus = memberStatus;
     }
@@ -25,8 +25,8 @@ public class Profile {
     public int getSwimmerId(){
         return swimmerId;
     }
-    public String getDOB(){
-        return DOB;
+    public String getDob(){
+        return dob;
     }
     public boolean getMedClearance() {
         return medClearance;
