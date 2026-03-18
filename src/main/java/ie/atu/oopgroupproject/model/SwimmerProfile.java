@@ -1,18 +1,25 @@
 package ie.atu.oopgroupproject.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-public class Profile {
+@Entity
+public class SwimmerProfile {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int swimmerId;
     public String name;
-    public int swimmerId;
     public String dob;
     public boolean medClearance;
     public boolean memberStatus;
 
-    public Profile(){}
+    public SwimmerProfile(){}
 
-    public Profile(String name, int SwimmerId, String DOB, boolean medClearance, boolean memberStatus){
+    public SwimmerProfile(String name, int SwimmerId, String DOB, boolean medClearance, boolean memberStatus){
         this.name = name;
         this.swimmerId = SwimmerId;
         this.dob = DOB;
