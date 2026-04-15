@@ -1,6 +1,5 @@
 package ie.atu.oopgroupproject.Service;
 
-import ie.atu.oopgroupproject.model.Profile;
 import ie.atu.oopgroupproject.model.UserProfile;
 import org.springframework.stereotype.Service;
 

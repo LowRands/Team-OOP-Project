@@ -1,7 +1,7 @@
 package ie.atu.oopgroupproject.Controller;
 
 import ie.atu.oopgroupproject.Service.CreateProfileService;
-import ie.atu.oopgroupproject.model.Profile;
+import ie.atu.oopgroupproject.model.SwimmerProfile;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +18,8 @@ public class CreateProfileControl {
     }
 
     @PostMapping
-    public Profile createProfile(@RequestBody Profile profile){
-        return profileService.createProfile(profile);
+    public SwimmerProfile createProfile(@RequestBody SwimmerProfile swimmerProfile){
+        return profileService.createProfile(swimmerProfile);
     }
 }
 
