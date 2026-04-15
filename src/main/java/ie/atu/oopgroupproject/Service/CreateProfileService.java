@@ -1,6 +1,6 @@
 package ie.atu.oopgroupproject.Service;
 
-import ie.atu.oopgroupproject.model.Profile;
+import ie.atu.oopgroupproject.model.SwimmerProfile;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,33 +9,33 @@ import java.util.List;
 
 @Service
 public class CreateProfileService {
-    private List<Profile> profiles = new ArrayList<Profile>();
+    private List<SwimmerProfile> SwimmerProfiles = new ArrayList<SwimmerProfile>();
 
-    public Profile createProfile(Profile profile) {
-        if(profile.getMemberStatus() && !profile.getMedClearance()) {
+    public SwimmerProfile createProfile(SwimmerProfile swimmer) {
+        if(swimmer.getMemberStatus() && !swimmer.getMedClearance()) {
             throw new RuntimeException("Can't be an active swimmer without medical clearance");
         }
 
-        profiles.add(profile);
-        return profile;
+        SwimmerProfiles.add(swimmer);
+        return swimmer;
     }
 
-    public List<Profile> getAllProfiles() {
-        return profiles;
+    public List<SwimmerProfile> getAllProfiles() {
+        return SwimmerProfiles;
     }
 
-    public Profile getProfileById(String id) {
-        for(Profile profile : profiles) {
-            if(profile.getSwimmerId() == Integer.parseInt(id)) {
-                return profile;
+    public SwimmerProfile getSwimmerById(String id) {
+        for(SwimmerProfile swimmer : SwimmerProfiles) {
+            if(swimmer.getSwimmerId() == Integer.parseInt(id)) {
+                return swimmer;
             }
         }
-        throw new RuntimeException("Profile with id " + id + " not found");
+        throw new RuntimeException("Swimmer Profile with id " + id + " not found");
     }
-    public void deleteProfileById(String id) {
-        for(Profile profile : profiles) {
-            if(profile.getSwimmerId() == Integer.parseInt(id)) {
-                profiles.remove(profile);
+    public void deleteSwimmerProfileById(String id) {
+        for(SwimmerProfile swimmer : SwimmerProfiles) {
+            if(swimmer.getSwimmerId() == Integer.parseInt(id)) {
+                SwimmerProfiles.remove(swimmer);
             }
         }
     }
